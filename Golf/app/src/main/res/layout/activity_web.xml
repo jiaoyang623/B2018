@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="guru.ioio.golf.WebActivity" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <at.pardus.android.webview.gm.run.WebViewGm
+            android:id="@+id/web"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="45dp" />
+
+        <SeekBar
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="top"
+            android:gravity="center"
+            android:max="@{100}"
+            android:paddingEnd="0dp"
+            android:paddingStart="0dp"
+            android:progressDrawable="@drawable/shape_seekbar_progress"
+            android:thumb="@null" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom|right"
+            android:onClick="@{(v)->presenter.loadJs()}"
+            android:text="js" />
+    </FrameLayout>
+</layout>
